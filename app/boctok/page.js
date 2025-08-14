@@ -22,6 +22,7 @@ export default function PaccbetPage() {
         eras: false,
         practice: false,
         tools: false,
+        publish: false,
         homework: false,
         'idea-gen': false,
     });
@@ -132,28 +133,70 @@ export default function PaccbetPage() {
                 </CollapsibleSection>
 
                 <CollapsibleSection
+                    id="publish"
+                    title="Публикация результата в интернет"
+                    isOpen={getSectionState('publish')}
+                    onToggle={toggleSection}
+                >
+                    <div className="bg-[#f9f9f9] p-5 rounded-lg my-5">
+                        <p className="mb-4 text-base leading-relaxed">
+                            Netlify Drop — бесплатный хостинг, который позволяет быстро опубликовать HTML-файл.
+                        </p>
+                        <ol className="pl-5 list-decimal">
+                            <li className="mb-2.5 text-base">
+                                Скачайте HTML из генератора (кнопка <em>Download</em>).
+                            </li>
+                            <li className="mb-2.5 text-base">
+                                Переименуйте файл в <code>index.html</code>.
+                            </li>
+                            <li className="mb-2.5 text-base">
+                                Поместите файл в новую папку и перетащите её на{' '}
+                                <a
+                                    href="https://app.netlify.com/drop"
+                                    target="_blank"
+                                    className="text-[#666] no-underline border-b border-[#ddd] hover:text-[#333] hover:border-[#333] transition-all duration-200"
+                                >
+                                    Netlify Drop
+                                </a>
+                                .
+                            </li>
+                            <li className="mb-2.5 text-base">
+                                Получите ссылку и сохраните её — это адрес вашего сайта.
+                            </li>
+                        </ol>
+                    </div>
+                </CollapsibleSection>
+
+                <CollapsibleSection
                     id="homework"
                     title="Домашнее задание"
                     isOpen={getSectionState('homework')}
                     onToggle={toggleSection}
                 >
                     <div className="bg-[#f9f9f9] p-5 rounded-lg my-5">
-                        <h3 className="font-serif text-xl font-medium mb-4">Задача: Создать и опубликовать сайт с помощью AI</h3>
+                        <h3 className="font-serif text-xl font-medium mb-4">
+                            Задача: создать и опубликовать простой сайт с помощью AI
+                        </h3>
 
-                        <h4 className="font-serif text-lg font-medium mb-3 mt-5">Шаг 1: Создание сайта</h4>
-                        <ul className="list-none pl-0">
-                            <li className="pl-5 relative mb-2.5 text-base before:content-['—'] before:absolute before:left-0 before:text-[#999]">
-                                Использовать любой AI-инструмент (Claude, ChatGPT, Gemini, AI.dev)
+                        <h4 className="font-serif text-lg font-medium mb-3 mt-5">Этап 1. Создание сайта</h4>
+                        <ol className="pl-5 list-decimal">
+                            <li className="mb-2.5 text-base">
+                                Используйте любой AI-инструмент (Claude, ChatGPT, Gemini, AI.dev).
                             </li>
-                            <li className="pl-5 relative mb-2.5 text-base before:content-['—'] before:absolute before:left-0 before:text-[#999]">
-                                <strong>Важно:</strong> В конце промпта всегда добавлять "в формате HTML одним файлом"
+                            <li className="mb-2.5 text-base">
+                                <strong>Важно:</strong> завершайте промпт фразой «в формате HTML одним файлом».
                             </li>
-                            <li className="pl-5 relative mb-2.5 text-base before:content-['—'] before:absolute before:left-0 before:text-[#999]">
-                                Можно использовать любую информацию: PDF, тексты, данные
+                            <li className="mb-2.5 text-base">
+                                В качестве материалов можно применять PDF, тексты или ваши данные.
                             </li>
-                        </ul>
+                        </ol>
 
-                        <h4 className="font-serif text-lg font-medium mb-3 mt-5">Идеи для проектов:</h4>
+                        <h4 className="font-serif text-lg font-medium mb-3 mt-5">Этап 2. Публикация сайта</h4>
+                        <p className="mb-4 text-base leading-relaxed">
+                            Следуйте шагам из секции «Публикация результата в интернет» и получите ссылку на сайт.
+                        </p>
+
+                        <h4 className="font-serif text-lg font-medium mb-3 mt-5">Идеи для проектов</h4>
                         <ul className="list-none pl-0">
                             <li className="pl-5 relative mb-2.5 text-base before:content-['—'] before:absolute before:left-0 before:text-[#999]">
                                 Landing page для школы изучения языка
@@ -171,6 +214,9 @@ export default function PaccbetPage() {
                                 История чего-нибудь (например, истории Рубика)
                             </li>
                         </ul>
+                        <p className="mt-5 text-base leading-relaxed">
+                            Пришлите ссылку на опубликованный сайт в качестве результата.
+                        </p>
                     </div>
                 </CollapsibleSection>
             </PaccbetLayout>
